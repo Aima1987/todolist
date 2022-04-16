@@ -16,6 +16,15 @@ function (){
     //Checkbox  type
     const checkBox = document.createElement('input');
     checkBox.setAttribute('class', 'single-todo-check')
+    checkBox.addEventListener('click', function (){
+        console.log('clicking the checkbox')
+        const classExist = checkBox.nextElementSibling.className.includes('cross-line')
+        if(classExist){
+            checkBox.nextElementSibling.classList.remove('cross-line')
+        } else{
+            checkBox.nextElementSibling.classList.add('cross-line')
+        }  
+    })
     //checkBox.type = 'checkbox'
     checkBox.setAttribute('type', 'checkbox');
 
@@ -43,5 +52,6 @@ function (){
     listItem.appendChild(deleteBtn);
     
     ulTodoList.appendChild(listItem)  
-    
+    newTodoInput.value = '';//or
+    //newTodoInput.value = null;
 })
